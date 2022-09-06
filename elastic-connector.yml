@@ -1,0 +1,14 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: https://rnd-faas.47billion.com
+functions:
+  elastic-connector:
+    lang: python3-fastapi
+    handler: ./elastic-connector
+    image: prakhar001/elastic-connector:latest
+    secrets:
+      - elastic-host
+      - elastic-key
+      - access-token
+
